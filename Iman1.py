@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 page_bg_img ="""
 <style>
 [data-testid="stAppViewContainer"]{
-background-image : url("https://c4.wallpaperflare.com/wallpaper/190/441/256/anime-boys-anime-hoods-simple-background-wallpaper-thumb.jpg");
+background-image : url("https://e0.pxfuel.com/wallpapers/902/723/desktop-wallpaper-a-boy-sexy-anime-boy-wings-birds-art-white-background-band-book-cool-brown-hair-blonde-hair-guy-male.jpg");
 background-size : cover;
 }
 
@@ -30,7 +30,7 @@ with st.sidebar :
 
 if(selected == "Home") :
     st.header(":blue[Kalkulator Perhitungan Rangkaian BJT Analisis DC dan AC model re (Ai, Zi, Av dan Zo)]")
-    st.subheader(":blue[By abdul Rahman (11-2021-023)] dari :orange[ITENAS]")
+    st.subheader(":blue[By abdul Rahman (11-2021-023)]:orange[dari ITENAS Program Studi Teknik Elektro]")
     st.write(":blue[Program ini dibuat untuk memenuhi Tugas Besar Elektronika Analog\nDosen Pengampu : Ir. Rustamaji M.T]")
     st.image("ITENAS.jpeg", width=500)
    
