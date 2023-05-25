@@ -2,5 +2,5 @@ streamlit
 python-math
 pillow
 streamlit-option-menu
-python-numpy
-matplotlib.pylpot
+numpy
+matplotlib
