@@ -3,4 +3,4 @@ python-math
 pillow
 streamlit-option-menu
 python-numpy
-python-matplotlib.pylpot
+matplotlib.pylpot
