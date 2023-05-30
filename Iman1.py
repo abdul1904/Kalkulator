@@ -99,7 +99,7 @@ if(selected == "Rangkaian Fixed Bias") :
         plt.title("Tegangan Output jika ro Tak Hingga")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
-        plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker=',')
+        plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker='.')
 
         plt.subplot(212)
         plt.title("Tegangan Output jika ro diketahui")
@@ -123,7 +123,7 @@ if(selected == "Rangkaian Voltage Divider Bias") :
     e=st.number_input(":violet[Masukkan Nilai RC (Ohm)]",0)
     f=st.number_input(":violet[Masukkan Nilai RE (Ohm)]",0)
     j=st.number_input(":violet[Masukkan Nilai ro(jika nilainya diketahui) (Ohm)]",0)
-    z=st.number_input(":violet[Masukkan nilai Tegangan Input (Volt)]",0.0000)
+    x=st.number_input(":violet[Masukkan nilai Tegangan Input (Volt)]",0.0000)
     g=st.number_input(":violet[Masukkan nilai Kapasitor Coupling1 (MikroFarad)]",0)
     h=st.number_input(":violet[Masukkan nilai Kapasitor Coupling2 (MikroFarad)]",0)
     i=st.number_input(":violet[Masukkan nilai Kapasitor Bypass (MikroFarad)]",0)
@@ -147,6 +147,8 @@ if(selected == "Rangkaian Voltage Divider Bias") :
         zi=Zi1
         zo=((e*j)/(e+j))
         Av=-(zo/re1)
+        vo= Av*x
+        vo1= av1*x
         st.write(":violet[HASIL PERHITUNGAN JIKA ro Tak Hingga]")
         st.write(":violet[ANALISIS DC]")
         st.success(f":violet[Nilai arus IB = {ib1} A]")
@@ -178,13 +180,13 @@ if(selected == "Rangkaian Voltage Divider Bias") :
         plt.title("Tegangan Output jika ro Tak Hingga")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
-        plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker=',')
+        plt.plot(t1, vo1*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker='.')
 
         plt.subplot(212)
         plt.title("Tegangan Output jika ro diketahui")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
-        plt.plot(t2, vo1*np.sin(2*np.pi*t2), color='tab:orange', linestyle='--', marker='.')
+        plt.plot(t2, vo*np.sin(2*np.pi*t2), color='tab:orange', linestyle='--', marker='.')
 
         st.pyplot(two_subplot_fig)
 
@@ -256,7 +258,7 @@ if(selected == "Rangkaian Feedback Collector") :
         plt.title("Tegangan Output jika RO Tidak Diketahui diketahui")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
-        plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker=',')
+        plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker='.')
 
         plt.subplot(212)
         plt.title("Tegangan Output jika RO diketahui")
