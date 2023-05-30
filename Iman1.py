@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 page_bg_img ="""
 <style>
 [data-testid="stAppViewContainer"]{
-background-image : url("https://e0.pxfuel.com/wallpapers/902/723/desktop-wallpaper-a-boy-sexy-anime-boy-wings-birds-art-white-background-band-book-cool-brown-hair-blonde-hair-guy-male.jpg");
+background-image : url("https://www.banjarsmartdigital.com/blog/wp-content/webp-express/webp-images/uploads/2021/09/background-putih-abstrak-1024x480.jpg.webp");
 background-size : cover;
 }
 
@@ -46,7 +46,7 @@ if(selected == "Rangkaian Fixed Bias") :
     b=st.number_input(":green[Masukkan Nilai β]",0)
     c=st.number_input(":green[Masukkan Nilai RB (Ohm)]",0)
     g=st.number_input(":green[Masukkan nilai RC (Ohm)]",0)
-    f=st.number_input(":green[Masukkan Nilai ro(jika ada) (Ohm)]",0)
+    f=st.number_input(":green[Masukkan Nilai ro(jika nilainya diketahui) (Ohm)]",0)
     h=st.number_input(":green[Masukkan nilai Tegangan Input (Volt)]",0.0000)
     d=st.number_input(":green[Masukkan nilai Kapasitor Coupling1 (MikroFarad)]",0)
     e=st.number_input(":green[Masukkan nilai Kapasitor Coupling2 (MikroFarad)]",0)
@@ -67,7 +67,7 @@ if(selected == "Rangkaian Fixed Bias") :
         av1=-(Zoro/re)
         vo=av*h
         vo1=av1*h
-        st.write(":green[HASIL PERHITUNGAN JIKA RO TIDAK DIKETAHUI]")
+        st.write(":green[HASIL PERHITUNGAN JIKA ro Tak hingga]")
         st.write(":green[ANALISIS DC]")
         st.success(f":green[Nilai arus IB = {ib} A]")
         st.success(f":green[Nilai arus IC = {ic} A]")
@@ -79,7 +79,7 @@ if(selected == "Rangkaian Fixed Bias") :
         st.success(f":green[Nilai Penguatan Tegangan Sebesar = {av} kali]")
         st.success(f":green[Nilai Impedansi Output Sebesar = {Zo} Ohm]")
         st.success(f":green[Nilai Tegangan Output Sebesar = {vo} Volt]")
-        st.write(":green[HASIL PERHITUNGAN JIKA RO DIKETAHUI]")
+        st.write(":green[HASIL PERHITUNGAN JIKA ro DIKETAHUI]")
         st.write(":green[ANALISIS DC]")
         st.success(f":green[Nilai arus IB = {ib} A]")
         st.success(f":green[Nilai arus IC = {ic} A]")
@@ -96,13 +96,13 @@ if(selected == "Rangkaian Fixed Bias") :
 
         two_subplot_fig = plt.figure(figsize=(6,6))
         plt.subplot(211)
-        plt.title("Tegangan Output jika RO Tidak Diketahui diketahui")
+        plt.title("Tegangan Output jika ro Tak Hingga")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
         plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker=',')
 
         plt.subplot(212)
-        plt.title("Tegangan Output jika RO diketahui")
+        plt.title("Tegangan Output jika ro diketahui")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
         plt.plot(t2, vo1*np.sin(2*np.pi*t2), color='tab:orange', linestyle='--', marker='.')
@@ -122,7 +122,7 @@ if(selected == "Rangkaian Voltage Divider Bias") :
     d=st.number_input(":violet[Masukkan Nilai R2 (Ohm)]",0)
     e=st.number_input(":violet[Masukkan Nilai RC (Ohm)]",0)
     f=st.number_input(":violet[Masukkan Nilai RE (Ohm)]",0)
-    j=st.number_input(":violet[Masukkan Nilai ro(jika ada) (Ohm)]",0)
+    j=st.number_input(":violet[Masukkan Nilai ro(jika nilainya diketahui) (Ohm)]",0)
     z=st.number_input(":violet[Masukkan nilai Tegangan Input (Volt)]",0.0000)
     g=st.number_input(":violet[Masukkan nilai Kapasitor Coupling1 (MikroFarad)]",0)
     h=st.number_input(":violet[Masukkan nilai Kapasitor Coupling2 (MikroFarad)]",0)
@@ -147,9 +147,7 @@ if(selected == "Rangkaian Voltage Divider Bias") :
         zi=Zi1
         zo=((e*j)/(e+j))
         Av=-(zo/re1)
-        vo=av1*z
-        vo1=Av*z
-        st.write(":violet[HASIL PERHITUNGAN JIKA RO TIDAK DIKETAHUI]")
+        st.write(":violet[HASIL PERHITUNGAN JIKA ro Tak Hingga]")
         st.write(":violet[ANALISIS DC]")
         st.success(f":violet[Nilai arus IB = {ib1} A]")
         st.success(f":violet[Nilai arus IC = {ic1} A]")
@@ -160,8 +158,7 @@ if(selected == "Rangkaian Voltage Divider Bias") :
         st.success(f":violet[Nilai Impedansi Input Sebesar = {Zi1} Ohm]")
         st.success(f":violet[Nilai Penguatan Tegangan Sebesar = {av1} kali]")
         st.success(f":violet[Nilai Impedansi Output Sebesar = {Zo1} Ohm]")
-        st.success(f":violet[Nilai Tegangan Output Sebesar = {vo} Volt]")
-        st.write(":violet[HASIL PERHITUNGAN JIKA RO DIKETAHUI]")
+        st.write(":violet[HASIL PERHITUNGAN JIKA ro DIKETAHUI]")
         st.write(":violet[ANALISIS DC]")
         st.success(f":violet[Nilai arus IB = {ib1} A]")
         st.success(f":violet[Nilai arus IC = {ic1} A]")
@@ -172,19 +169,19 @@ if(selected == "Rangkaian Voltage Divider Bias") :
         st.success(f":violet[Nilai Impedansi Input Sebesar = {zi} Ohm]")
         st.success(f":violet[Nilai Penguatan Tegangan Sebesar = {Av} kali]")
         st.success(f":violet[Nilai Impedansi Output Sebesar = {zo} Ohm]")
-        st.success(f":violet[Nilai Tegangan Output Sebesar = {vo1} Volt]")
+        
 
         t1 =np.arange(0.0, 5.0, 0.1)
         t2 =np.arange(0.0, 5.0, 0.02)
         two_subplot_fig = plt.figure(figsize=(6,6))
         plt.subplot(211)
-        plt.title("Tegangan Output jika RO Tidak Diketahui diketahui")
+        plt.title("Tegangan Output jika ro Tak Hingga")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
         plt.plot(t1, vo*np.sin(2*np.pi*t1), color='tab:blue', linestyle='--', marker=',')
 
         plt.subplot(212)
-        plt.title("Tegangan Output jika RO diketahui")
+        plt.title("Tegangan Output jika ro diketahui")
         plt.ylabel('Amplitude (V)')
         plt.xlabel('Time (s)')
         plt.plot(t2, vo1*np.sin(2*np.pi*t2), color='tab:orange', linestyle='--', marker='.')
@@ -202,7 +199,7 @@ if(selected == "Rangkaian Feedback Collector") :
     b=st.number_input(":orange[Masukkan Nilai β ]",0)
     c=st.number_input(":orange[Masukkan Nilai Rf (Ohm)]",0)
     d=st.number_input(":orange[Masukkan Nilai RC (Ohm)]",0)
-    e=st.number_input(":orange[Masukkan Nilai ro(jika ada) (Ohm)]",0)
+    e=st.number_input(":orange[Masukkan Nilai ro(Jika Diketahui Nilainya) (Ohm)]",0)
     z=st.number_input(":orange[Masukkan nilai Tegangan Input (Volt)]",0.0000)
     f=st.number_input(":orange[Masukkan nilai Kapasitor Coupling1 (MikroFarad)]",0)
     g=st.number_input(":orange[Masukkan nilai Kapasitor Coupling2 (MikroFarad)]",0)
@@ -227,7 +224,7 @@ if(selected == "Rangkaian Feedback Collector") :
         av1 = o*(p/re)
         vo=av*z
         vo1=av1*z
-        st.write(":orange[HASIL PERHITUNGAN JIKA RO TIDAK DIKETAHUI]")
+        st.write(":orange[HASIL PERHITUNGAN JIKA ro Tak Hingga]")
         st.write(":orange[ANALISIS DC]")
         st.success(f":orange[Nilai arus IB = {ib} A]")
         st.success(f":orange[Nilai arus IC = {ic} A]")
@@ -239,7 +236,7 @@ if(selected == "Rangkaian Feedback Collector") :
         st.success(f":orange[Nilai Penguatan Tegangan Sebesar = {av} kali]")
         st.success(f":orange[Nilai Impedansi Output Sebesar = {zo} Ohm]")
         st.success(f":orange[Nilai Tegangan Output Sebesar = {vo} Volt]")
-        st.write(":orange[HASIL PERHITUNGAN JIKA RO DIKETAHUI]")
+        st.write(":orange[HASIL PERHITUNGAN JIKA ro DIKETAHUI]")
         st.write(":orange[ANALISIS DC]")
         st.success(f":orange[Nilai arus IB = {ib} A]")
         st.success(f":orange[Nilai arus IC = {ic} A]")
